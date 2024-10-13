@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mentoría Pragma / mobile first + grid</title>
+  </head>
+  <style>
+    html * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+      grid-column-gap: 0px;
+      grid-row-gap: 0px;
+      height: 100vh;
+      grid-template-areas:
+        'header header header header header'
+        'sidenav sidenav sidenav sidenav sidenav'
+        'main main main main main'
+        'main main main main main'
+        "footer footer footer footer footer";
+    }
+
+    header.header {
+      grid-area: header;
+      background-color: blue;
+    }
+
+    div.sidenav {
+      grid-area: sidenav;
+      background-color: aqua;
+    }
+
+    footer.footer {
+      grid-area: footer;
+      background-color: blueviolet;
+    }
+
+    main.main {
+      grid-area: main;
+      background-color: burlywood;
+    }
+
+    @media screen and (min-width: 768px) {
+      .container {
+        grid-template-areas:
+          'header header header header header'
+          'sidenav main main main main'
+          'sidenav main main main main'
+          'sidenav main main main main'
+          "footer footer footer footer footer";
+      }
+      
+    }
+  </style>
+  <body>
+    <div class="container">
+      <header class="header">
+        header
+      </header>
+      <div class="sidenav">sidenav</s></div>
+      <main class="main">
+        p*20
+      </main>
+      <footer class="footer">footer</footer>
+    </div>
+  </body>
+</html>
