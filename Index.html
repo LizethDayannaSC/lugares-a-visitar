@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="/app.js"></script>
     <title>Lugares por conocer</title>
 </head>
 
@@ -37,25 +38,56 @@
         </header>
         <div id="lugares">
             <h2 class="t2">Sitios famosos para Visitar</h2>
-            <div class="cards">
-                <div class="box">
-                    <img src="img/tulipanes.jpg" alt="" width="100%" height="50%">
-                    <h3 class="pt-2 px-1" style="margin: 10px;">Jardín de Tulipanes</h3>
-                    <p class="m-auto">Ámsterdam</p>
-                    <div class="btn-card">
-                        <a href="https://es.wikipedia.org/wiki/Keukenhof"><button><i class="bi bi-chat-right-text"></i>
-                                Informate</button></a>
-                        <a
-                            href="https://www.google.es/maps/place/Keukenhof/@52.269712,4.5443587,17z/data=!3m1!4b1!4m6!3m5!1s0x47c5c20434806f1d:0x37db0da72386280!8m2!3d52.2697087!4d4.5469336!16zL20vMDZmMHNk?hl=es&entry=ttu&g_ep=EgoyMDI0MDkwNC4wIKXMDSoASAFQAw%3D%3D"><button><i
-                                    class="bi bi-search-heart"></i> Descubrelo</button></a>
+            <div id="paises" class="cards">
+                <template id="box-template">
+                    <div class="box">
+                        <img id="pais-bandera" src="https://flagcdn.com/gs.svg" alt="">
+                        <h3 id="pais-titulo" class="pt-2 px-1" style="margin: 10px;">Jardín de Tulipanes</h3>
+                        <p class="m-auto">Descripción:</p>
+                        <table id="table-description">
+                            <tr>
+                                <td>
+                                    <li class="table-list-item"><b>Población:</b>
+                                        <div id="pais-poblacion" class="ps-1">poblacion</div>
+                                    </li>
+
+                                </td>
+                                <td>
+                                    <li class="table-list-item"><b>Capital:</b>
+                                        <div id="pais-capital" class="ps-1">poblacion</div>
+                                    </li>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <li class="table-list-item"><b>Lenguaje:</b>
+                                        <div id="pais-lenguaje" class="ps-1">poblacion</div>
+                                    </li>
+                                </td>
+                                <td>
+                                    <li class="table-list-item"><b>Moneda:</b>
+                                        <div id="pais-moneda" class="ps-1">poblacion</div>
+                                    </li>
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="btn-card">
+                            <!-- <a target="_blank" href="https://es.wikipedia.org/wiki/Keukenhof"><button><i
+                                    class="bi bi-chat-right-text"></i>
+                                Informate</button></a> -->
+                            <a id="pais-ubicacion" target="_blank"
+                                href="https://goo.gl/maps/mJzdaBwKBbm2B81q9"><button><i class="bi bi-search-heart"></i>
+                                    Descubrelo</button></a>
+                        </div>
                     </div>
-                </div>
-                <div class="box">
+                </template>
+                <!-- <div class="box">
                     <img src="img/ciudad-lego.webp" alt="" width="100%" height="50%">
                     <h3 class="pt-2 px-1" style="margin: 10px;">Ciudad Lego - Zaandam</h3>
                     <p class="m-auto">Holanda</p>
                     <div class="btn-card">
-                        <a href="https://es.wikipedia.org/wiki/Zaandam"><button><i class="bi bi-chat-right-text"></i>
+                        <a target="_blank" href="https://es.wikipedia.org/wiki/Zaandam"><button><i
+                                    class="bi bi-chat-right-text"></i>
                                 Informate</button></a>
                         <a
                             href="https://www.google.es/maps/place/Zaandam,+Pa%C3%ADses+Bajos/@52.4502709,4.8230856,13z/data=!3m1!4b1!4m6!3m5!1s0x47c5fcd955df5113:0xe2c14b50ac405146!8m2!3d52.4420399!4d4.8291993!16zL20vMDZueHht?hl=es&entry=ttu&g_ep=EgoyMDI0MDkwNC4wIKXMDSoASAFQAw%3D%3D"><button><i
@@ -67,15 +99,16 @@
                     <h3 class="pt-2 px-1" style="margin: 10px;">Lago de Como</h3>
                     <p class="m-auto">Lago en Italia</p>
                     <div class="btn-card">
-                        <a href="https://es.wikipedia.org/wiki/Lago_de_Como"><button><i class="bi bi-chat-right-text">
-                                    <i class="fa-brands fa-whatsapp"></i></i> Informate</button></a>
-                        <a
+                        <a target="_blank" href="https://es.wikipedia.org/wiki/Lago_de_Como"><button><i
+                                    class="bi bi-chat-right-text">
+                                </i> Informate</button></a>
+                        <a target="_blank"
                             href="https://www.google.es/maps/place/Lago+de+Como/@46.0160486,9.2571676,10z/data=!4m6!3m5!1s0x47843d32820b62f7:0x3e40c4eae898e1e0!8m2!3d46.0160486!4d9.2571676!16zL20vMDFsNHNt?hl=es&entry=ttu&g_ep=EgoyMDI0MDkwNC4wIKXMDSoASAFQAw%3D%3D"><button><i
                                     class="bi bi-search-heart"></i> Descubrelo</button></a>
                     </div>
                 </div>
+            </div> -->
             </div>
-        </div>
 
 
     </section>
